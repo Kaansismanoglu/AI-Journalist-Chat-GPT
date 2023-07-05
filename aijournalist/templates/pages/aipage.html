@@ -1,0 +1,74 @@
+{%extends 'layout.html'%}
+{%load static%}
+
+{% block content%}
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>YAPAY ZEKA SAYFASI</h1>
+
+        </div>
+    </div>
+</div>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+<div class="container py-5">
+    <header class="text-center text-white">
+      <h1 class="display-4">Bootstrap Datatables</h1>
+      <p class="lead mb-0">Using Bootstrap 4 and <a href="https://datatables.net/examples/styling/bootstrap4.html" class="text-white font-italic">
+          <u>Datatables</u></a>, add interaction controlsto your HTML tables.</p>
+      <p class="font-italic">Snippet By
+        <a href="https://bootstrapious.com" class="text-white">
+          <u>Bootstrapious</u>
+        </a>
+      </p>
+    </header>
+    <div class="row py-5">
+      <div class="col-lg-10 mx-auto">
+        <div class="card rounded shadow border-0">
+          <div class="card-body p-5 bg-white rounded">
+            <div class="table-responsive">
+              <table id="example" style="width:100%" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for post in postlist %}
+                  <tr>
+                    <td>{{post.title}}</td>
+                    <td>{{post.image}}</td>
+                    <td>{{post.link}}</td>
+                    <td>{{post.content}}</td>
+                  </tr>
+                  {% endfor %}
+                  {% for post in postlist2 %}
+                  <tr>
+                    <td>{{post.title}}</td>
+                    <td>{{post.image}}</td>
+                    <td>{{post.link}}</td>
+                    <td>{{post.content}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+<script>
+    $(function() {
+    $(document).ready(function() {
+      $('#example').DataTable();
+    });
+  });
+</script>
+{%endblock%}

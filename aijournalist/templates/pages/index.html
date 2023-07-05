@@ -1,0 +1,77 @@
+{%extends 'layout.html'%}
+{%load static%}
+
+{% block content%}
+<body>
+    <!-- Page Content -->
+  <div class="container">
+    <!-- Page Heading -->
+    <h1 class="my-4">AI JOURNALIST<br>
+      <small>Bu sayfa sadece güncel futbol haberlerini içerir.</small>
+    </h1>
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="aipage">CSV DOSYASINI GÜNCELLE VE LİSTEYİ GÖSTER</a></li>
+      <li class="page-item"><a class="page-link" href="">EXCEL DOSYASINI GÖR</a></li>
+    </ul>
+    {% for post in postlist %}
+    <!-- Projects -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="{{post.link}}">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{{post.image }}" alt="{{post.title}}">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+        <a class="btn btn-primary" href="{{post.link}}">Haberi Görüntüle</a>
+      </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+    {% endfor %}
+    {% for post in postlist2 %}
+    <!-- Projects -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="{{post.link}}">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{{post.image}}" alt="{{post.title}}">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+        <a class="btn btn-primary" href="{{post.link}}">Haberi Görüntüle</a>
+      </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+    {% endfor %}
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- /.container -->
+</body>
+{%endblock%}
